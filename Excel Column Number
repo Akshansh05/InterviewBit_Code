@@ -1,0 +1,12 @@
+public class Solution {
+    public int titleToNumber(String A) {
+        A= A.toUpperCase();
+        int power =0;
+        int page=0;
+       for(int i=A.length()-1;i>=0;i--){
+           int val = Character.getNumericValue(A.charAt(i))-Character.getNumericValue('A')+1;
+           page = (int)Math.pow(26,power++)* val;
+       }
+       return page;
+    }
+}
