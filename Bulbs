@@ -1,0 +1,16 @@
+public class Solution {
+    public int bulbs(int[] A) {
+        
+        int ans =0 ;
+        int state =0;
+        
+        for(int i =0;i<A.length;i++){
+            if(A[i]==state){
+                ans++;
+                if(state == 0)state =1;
+                else state =0;
+            }
+        }
+        return ans;
+    }
+}
