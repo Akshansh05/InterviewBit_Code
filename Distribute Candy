@@ -1,0 +1,24 @@
+public class Solution {
+    public int candy(int[] A) {
+        int can [] = new int [A.length];
+          int c [] = new int [A.length];
+        for(int i =0;i<A.length;i++){
+        can[i]= 1;
+        c[i]=1;
+        }
+         for(int i =1;i<A.length;i++){
+             if(A[i]>A[i-1])
+             can[i]= can[i-1]+1;
+        }
+        for(int i = A.length-2;i>=0;i--){
+            if(A[i]>A[i+1])
+                c[i] = c[i+1]+1;
+        }
+        
+        int sum=0;
+        for(int i=0;i<can.length;i++){
+            sum+=Math.max(c[i],can[i]);
+        }
+        return sum;
+    }
+}
