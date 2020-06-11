@@ -1,0 +1,29 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int atoi(final String A) {
+        String B = A.trim();
+        int sign =1;
+        if(B.charAt(0)== '-'){
+            sign =-1;
+            B=B.substring(1,B.length());
+        }
+         if(B.charAt(0)== '+'){
+            sign =1;
+            B=B.substring(1,B.length());
+        }
+        String ans="";
+        int i=0;
+        long result=0;
+        while(i<B.length() && Character.isDigit(B.charAt(i)))
+            ans+=B.charAt(i++);
+        for(int j=0;j<ans.length();j++){
+            result*=10;
+            result+=ans.charAt(j)-'0';
+            if(result*sign >= Integer.MAX_VALUE)
+                return Integer.MAX_VALUE;
+            if(result*sign <= Integer.MIN_VALUE)
+                return Integer.MIN_VALUE;
+        }
+        return (int)result*sign;
+    }
+}
