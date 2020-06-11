@@ -1,0 +1,15 @@
+import java.math.BigInteger; 
+public class Solution {
+    public int power(String A) {
+      BigInteger x = new BigInteger(A);
+      
+      if(x.equals(BigInteger.ONE) || x.equals(BigInteger.ZERO))
+         return 0;
+      while(x.remainder(BigInteger.valueOf(2)).equals(BigInteger.ZERO))
+       x= x.divide(BigInteger.valueOf(2));
+       
+       if(x.equals(BigInteger.ONE))
+        return 1;
+       return 0;
+    }
+}
