@@ -1,0 +1,9 @@
+public class Solution {
+    public int reverse(int A) {
+        long rev=0;
+        while(A !=0){
+            rev=rev*10;
+            rev+=A%
+        }
+    }
+}
