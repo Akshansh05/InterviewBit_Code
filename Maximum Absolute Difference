@@ -1,0 +1,15 @@
+public class Solution {
+    public int maxArr(int[] A) {
+        int maxplus =Integer.MIN_VALUE;
+        int minplus = Integer.MAX_VALUE;
+        int maxminus = Integer.MIN_VALUE;
+        int minminus = Integer.MAX_VALUE;
+        for(int i=0;i<A.length;i++){
+                maxplus=Math.max(maxplus,A[i]+i);
+                minplus=Math.min(minplus,A[i]+i);
+                maxminus=Math.max(maxminus,A[i]-i);
+                minminus= Math.min(minminus,A[i]-i);
+        }
+        return Math.max((maxplus-minplus),(maxminus-minminus));
+    }
+}
