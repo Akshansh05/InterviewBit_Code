@@ -1,0 +1,32 @@
+public class Solution {
+    public void setZeroes(ArrayList<ArrayList<Integer>> a) {
+        HashSet<Integer> hsr = new HashSet<Integer>();
+        HashSet<Integer> hsc = new HashSet<Integer>();
+        for(int i=0;i<a.size();i++){
+            for(int j=0;j<a.get(0).size();j++){
+                   if(a.get(i).get(j) == 0){
+                        hsr.add(i);
+                        hsc.add(j);
+                   }
+                }
+            }
+            Iterator<Integer> r = hsr.iterator();
+            Iterator<Integer> c = hsc.iterator(); 
+            
+            while(r.hasNext())
+                setRowZero(a,r.next());
+             while(c.hasNext())
+                setColZero(a,c.next());    
+            
+        }
+    public void setRowZero(ArrayList<ArrayList<Integer>> a,int row){
+        int size = a.get(0).size();
+        for(int i=0;i<size;i++)
+        a.get(row).set(i,0);
+    }
+    public void setColZero(ArrayList<ArrayList<Integer>> a,int col){
+        int size = a.size();
+        for(int i=0;i<size;i++)
+        a.get(i).set(col,0);
+    } 
+    }
