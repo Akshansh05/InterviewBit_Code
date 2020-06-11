@@ -1,0 +1,25 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public String largestNumber(final int[] A) {
+        String arr[] = new String[A.length];
+         for(int i=0;i<A.length;i++)
+            arr[i] = String.valueOf(A[i]);
+        Arrays.sort(arr,new sc());
+        
+        StringBuilder k= new StringBuilder("");
+        for(int i=0;i<arr.length;i++){
+          k.append(arr[i]);
+        }
+          if(k.toString().charAt(0) == '0')
+            return "0";
+        return k.toString();
+       
+    }
+}
+  class sc implements Comparator<String>{
+    public int compare(String x,String y){
+        if((x+y).compareTo(y+x) >0)
+            return -1;
+        return 1;    
+    }
+}
