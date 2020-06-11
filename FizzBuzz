@@ -1,0 +1,13 @@
+public class Solution {
+    public String[] fizzBuzz(int A) {
+        String val = new String[A.length];
+        for(int i =1;i<=A;i++){
+            if( i%3 == 0 && i%5==0){
+                val[i-1]="FizzBuzz";
+            }else if(i %3 ==0){
+                val[i-1]="FizzBuzz";
+            }
+            
+        }
+    }
+}
